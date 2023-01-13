@@ -4,6 +4,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-def print_list_integer(my_list=[]):
+def print_list_integer(my_list=[])
 
-#endif
+#endif 
