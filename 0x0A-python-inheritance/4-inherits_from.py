@@ -4,7 +4,6 @@ module with method inherits_from
 """
 
 
-
 def inherits_from(obj, a_class):
     """Returns true if the object is inherited from a specified class"""
 
