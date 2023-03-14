@@ -12,3 +12,6 @@ def my_Status():
         print("\t- type: {}".format(type(html)))
         print("\t- content: {}".format(html))
         print("\t- utf8 content: {}".format(html.decode('utf-8')))
+
+if __name__ == "__main__":
+    my_Status()
