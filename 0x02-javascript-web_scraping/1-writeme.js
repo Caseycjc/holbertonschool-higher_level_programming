@@ -13,7 +13,7 @@ function writeStringToFile (filePath, stringToWrite) {
 
 if (process.argv.length > 3) {
   const filePath = process.argv[2];
-  const stringToWrite = process.argv[3];
+  const stringToWrite = process.argv.slice(3).join(' ');
   writeStringToFile(filePath, stringToWrite);
 } else {
   console.error('Please provide a file path and a string to write as arguments');
