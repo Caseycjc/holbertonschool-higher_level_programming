@@ -1,4 +1,4 @@
-#!/bin/usr/node
+#!/usr/bin/node
 const fs = require('fs');
 
 function writeStringToFile (filePath, stringToWrite) {
