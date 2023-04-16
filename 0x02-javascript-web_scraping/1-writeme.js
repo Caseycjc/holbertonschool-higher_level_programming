@@ -1,20 +1,10 @@
 #!/usr/bin/node
 const fs = require('fs');
+const { argv } = require('process');
 
-function writeStringToFile (filePath, stringToWrite) {
-  fs.writeFile(filePath, stringToWrite, 'utf8', (error) => {
-    if (error) {
-      console.error('An error occurred:', error);
-    } else {
-      console.log(`Successfully wrote to file: ${filePath}`);
-    }
-  });
-}
-
-if (process.argv.length > 3) {
-  const filePath = process.argv[2];
-  const stringToWrite = process.argv.slice(3).join(' ');
-  writeStringToFile(filePath, stringToWrite);
-} else {
-  console.error('Please provide a file path and a string to write as arguments');
-}
+const data_ = new Uint8Array(Buffer.from(argv[3]));
+fs.writeFile(process.argv[2], data_, function (err, data) {
+  if (err) {
+    return console.log(err);
+  }
+});
