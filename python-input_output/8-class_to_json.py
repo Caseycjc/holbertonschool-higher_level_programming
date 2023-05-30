@@ -8,7 +8,7 @@ def class_to_json(obj):
     """converts the object"""
     if not hasattr(obj, "__dict__"):
         return {}
-    
+
     json_dict = {}
     for key, value in obj.__dict__.items():
         if not key.startswith("__"):
