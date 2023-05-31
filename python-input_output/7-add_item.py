@@ -9,22 +9,13 @@ import json
 from typing import List
 
 
-def add_items_to_list(filename: str, items: List[str]):
-    """adds items to the list"""
+save_to_json_file = __import__('5-save_to_json_file').save_to_json_file
+load_from_json_file = __import__('6-load_from_json_file').load_from_json_file
+
+try:
+    my_list = load_from_json_file("add_item.json")
+except:
     my_list = []
-
-    try:
-        with open(filename, 'r') as file:
-            my_list = json.load(file)
-    except FileNotFoundError:
-        pass
-
-    my_list.extend(items)
-
-    with open(filename, 'w') as file:
-        json.dump(my_list, file)
-
-
-if __name__ == "__main__":
-    arguments = sys.argv[1:]
-    add_items_to_list("add_item.json", arguments)
+for i in range(1, len(sys.argv)):
+    my_list.append(sys.argv[i])
+save_to_json_file(my_list, "add_item.json")
