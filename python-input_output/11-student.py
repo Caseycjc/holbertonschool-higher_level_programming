@@ -3,6 +3,7 @@
 Defines a student
 """
 
+
 class Student:
     """Represents a student"""
 
