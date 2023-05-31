@@ -9,5 +9,11 @@ import json
 
 def save_to_json_file(my_obj, filename):
     """writes the object to the file"""
-    with open(filename, 'w') as file:
-        json.dump(my_obj, file)
+    with open(filename, 'w', encoding="UTF8") as file:
+        return json.dump(my_obj, file)
+
+if __name__ == "__main__":
+    filename = "my_list.json"
+    my_list = save_to_json_file(10, filename)
+    print(my_list)
+    print(type(my_list))
